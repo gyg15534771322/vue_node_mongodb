@@ -1,6 +1,6 @@
 <template>
 <div class="home-container">
-    <Github githubLink="https://github.com/cd-dongzi"></Github>
+    <Github githubLink="https://github.com/gyg15534771322"></Github>
     <h1>这是首页</h1>
 </div>
 </template>

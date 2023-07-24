@@ -2,7 +2,7 @@
     <section class="blog-wrapper">
         <ul v-if="blogList.length > 0">
             <li class="article" v-for="(v, index) in blogList" :style="{'animation-delay': index%5*0.2+'s'}" @click="$router.push(`/article/${v._id}`)">
-                <Github class="github mouse-pointer" background="rgba(186, 164, 119, 0.99)" :link="v.github" v-if="v.github"></Github>
+                <Github class="github mouse-pointer" background="rgba(186, 164, 119, 0.99)" :githubLink="v.github" v-if="v.github"></Github>
                 <time>{{v.createTime | parseTime('{y}-{m}-{d}')}}</time>
                 <h2 class="name">{{v.title}}</h2>
                 <div class="tags">

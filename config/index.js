@@ -9,7 +9,7 @@ module.exports = {
             devtoolType: 'cheap-module-eval-source-map',
             proxyTable: {  //proxy代理
                 '/admin_demo_api': {
-                    target: 'http://localhost:3000/admin_demo_api/',
+                    target: 'http://192.168.3.111:3000/admin_demo_api/',
                     changeOrigin: true,
                     pathRewrite: {
                       '^/admin_demo_api': '/'
@@ -33,12 +33,12 @@ module.exports = {
             env: 'development',
             publicPath: '/',
             host: 'localhost',
-            port: '8080',
+            port: '8099',
             assetsSubDirectory: 'static',
             devtoolType: 'cheap-module-eval-source-map',
             proxyTable: {
                 '/client_demo_api': {
-                    target: 'http://localhost:3000/client_demo_api/',
+                    target: 'http://192.168.3.111:3000/client_demo_api/',
                     changeOrigin: true,
                     pathRewrite: {
                       '^/client_demo_api': '/'

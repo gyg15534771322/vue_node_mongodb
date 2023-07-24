@@ -5,7 +5,7 @@
             <Back></Back>
             <div class="content">
                 <div class="box">
-                    <Github class="github" :link="blogInfo.github" v-if="blogInfo.github"></Github>
+                    <Github class="github" :githubLink="blogInfo.github" v-if="blogInfo.github"></Github>
                     <div class="entry">
                         <h1>{{blogInfo.title}}</h1>
                         <time>{{blogInfo.releaseTime | parseTime('{y}-{m}-{d}')}}</time>
