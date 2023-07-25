@@ -109,12 +109,10 @@
                 this.getUserList()
             },
             handleSizeChange(val) {
-                // console.log(`每页 ${val} 条`);
                 this.pagesize = val;
                 this.getUserList()
             },
             handleCurrentChange(val) {
-                // console.log(`当前页: ${val}`);
                 this.pageindex = val;
                 this.getUserList()
             },
@@ -157,7 +155,6 @@
                 
             },
             edit (scope) {
-                console.log(scope)
                 this.editShow = true;
                 scope.row.releaseTime = new Date(scope.row.releaseTime)
                 this.userInfo = scope.row

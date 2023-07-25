@@ -19,6 +19,5 @@ module.exports = {
         }catch(e){
             ctx.sendError(e)
         }
-        // console.log(id)
     }
 }

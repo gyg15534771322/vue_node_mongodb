@@ -147,12 +147,10 @@
                 this.getBlogList()
             },
             handleSizeChange(val) {
-                // console.log(`每页 ${val} 条`);
                 this.pagesize = val;
                 this.getBlogList()
             },
             handleCurrentChange(val) {
-                // console.log(`当前页: ${val}`);
                 this.pageindex = val;
                 this.getBlogList()
             },
@@ -195,7 +193,6 @@
                 
             },
             edit (scope) {
-                console.log(scope)
                 this.editShow = true;
                 scope.row.releaseTime = new Date(scope.row.releaseTime)
                 this.blogInfo = scope.row

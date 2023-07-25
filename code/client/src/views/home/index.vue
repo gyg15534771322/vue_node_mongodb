@@ -37,12 +37,6 @@
                 
                 if (distance+this.winH >= scrollH) {
                     if (this.blogLoadingBol) {
-                        console.log(111)
-                        // this.pageindex ++;
-                        // this.$store.dispatch('getBlogList', {
-                        //     type: this.$route.params.classify,
-                        //     pageindex: this.pageindex
-                        // })
                     }
                 }
             })

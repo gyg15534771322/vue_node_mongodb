@@ -33,7 +33,6 @@ module.exports = {
             }, {createTime: 0, html: 0}, {limit: pagesize*1, skip: (pageindex-1)*pagesize});
             ctx.send(data)
         }catch (e){
-            console.log(e)
             ctx.sendError(e)
         }
         

@@ -15,7 +15,6 @@ export default () => {
                 ctx.sendError('token验证失败, 请重新登录!');
                 ctx.throw(401, 'invalid token');
             }
-            console.log("鉴权成功");
         }
         await next();
     }

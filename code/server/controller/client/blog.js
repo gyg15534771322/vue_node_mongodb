@@ -6,15 +6,13 @@ module.exports = {
         console.log('----------------获取博客列表 client_demo_api/blog/list-----------------------');
         let { type = null, pageindex = 1, pagesize = 5 } = ctx.request.query;
         console.log('type:' + type + ',' + 'pageindex:' + pageindex + ',' + 'pagesize:' + pagesize)
-        let type_1 = { type, isVisible: true, source: 1 }
-        if (!type) type_1 = { isVisible: true, source: 1 }
-        console.log('!type::: ', !type);
+        let type_1 = { type, isVisible: true }
+        if (!type) type_1 = { isVisible: true }
         try {
 
             let data = await ctx.find(blogModel, type_1, null, { limit: pagesize * 1, skip: (pageindex - 1) * pagesize, sort: { level: -1, createTime: -1 } });
             return ctx.send(data)
         } catch (e) {
-            console.log(e)
             return ctx.sendError(e)
         }
 

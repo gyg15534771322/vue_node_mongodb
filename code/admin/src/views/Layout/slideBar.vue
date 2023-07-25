@@ -31,7 +31,6 @@
         },
         methods: {
             demo (path, child) {
-                console.log(path, child);
                 return path
             }
         }

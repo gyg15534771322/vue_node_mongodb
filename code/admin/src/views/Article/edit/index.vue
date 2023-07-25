@@ -1,8 +1,8 @@
 <template>
-    <el-dialog title="歌曲编辑" :visible.sync="dialogTableVisible" class="edit-wrapper" @close="close" width="80%">
+    <el-dialog title="修改博客" :visible.sync="dialogTableVisible" class="edit-wrapper" @close="close" width="80%">
         <el-form :model="info" :rules="rules" ref="form" label-width="100px" class="form">
-            <el-form-item label="音乐类型" prop="type">
-                <el-select v-model="info.type" multiple clearable placeholder="请选择音乐类型" class="block">
+            <el-form-item label="博客类型" prop="type">
+                <el-select v-model="info.type" multiple clearable placeholder="请选择博客类型" class="block">
                     <el-option v-for="item in blogTypes" :key="item.name" :label="item.name" :value="item.name">
                     </el-option>
                 </el-select>
@@ -14,7 +14,7 @@
                 <el-input type="textarea" v-model="info.desc"></el-input>
             </el-form-item>
             <el-form-item label="文章内容" prop="markdown">
-                <Markdown v-model="info.markdown"></Markdown>
+                <Markdown v-model="info.markdown" @input2="input2"></Markdown>
             </el-form-item>
             <el-form-item label="级别" prop="album">
                 <el-select v-model="info.level" placeholder="请选择级别" class="block">
@@ -43,7 +43,6 @@
         </el-form>
     </el-dialog>
 </template>
-
 
 <script>
     import { mapGetters } from 'vuex'
@@ -81,13 +80,11 @@
             submitForm(formName) {
                 this.loading = true;
                 this.$refs[formName].validate( async (valid) => {
-                    // console.log(this.info)
                     if (valid) {
                         try {
                             this.info.html = this.info.markdown
                             await this.$store.dispatch('updateBlog', this.info);
                             this.loading = false;
-                            // this.$router.push('/music/list');
                             this.close()
                         }catch (e) {
                             this.loading = false;
@@ -95,10 +92,12 @@
                         
 
                     } else {
-                        console.log('error submit!!');
                         return false;
                     }
                 });
+            },
+            input2(e){
+                this.info.markdown=e
             }
 
         },

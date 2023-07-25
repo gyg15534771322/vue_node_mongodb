@@ -43,7 +43,6 @@ const blog = {
                             state.loadingBol = true;
                         }
                     }).catch( err => {
-                        // console.log(err)
                         reject(err)
                     })
             })
@@ -57,7 +56,6 @@ const blog = {
                         commit('BLOGINFO', res)
                         resolve(res)
                     }).catch( err => {
-                        // console.log(err)
                         reject(err)
                     })
             })

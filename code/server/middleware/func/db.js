@@ -11,7 +11,6 @@ export const add = (model, conditions) => {
                 reject(err);
                 return false;
             }
-            console.log('save success!')
             resolve(res);
         })
     })
@@ -35,9 +34,7 @@ export const update = (model, conditions, update, options) => {
                 return false;
             }
             if (res.n != 0) {
-                console.log('update success!');
             } else {
-                console.log('update fail:no this data!');
             }
             resolve(res);
         })
@@ -60,9 +57,7 @@ export const remove = (model, conditions) => {
                 return false;
             } else {
                 if (res.result.n != 0) {
-                    console.log('remove success!');
                 } else {
-                    console.log('remove fail:no this data!');
                 }
                 reject(res);
             }
@@ -92,9 +87,7 @@ export const find = (model, conditions, fields, options = {}) => {
                 return false;
             } else {
                 if (res.length != 0) {
-                    console.log('find success!');
                 } else {
-                    console.log('find fail:no this data!');
                 }
                 resolve(res)
             }
@@ -125,9 +118,7 @@ export const findOne = (model, conditions, fields, options = {}) => {
                 return false;
             } else {
                 if (res) {
-                    console.log('find success!');
                 } else {
-                    console.log('find fail:no this data!');
                 }
                 resolve(res);
             }
@@ -146,7 +137,6 @@ export const findPage = async (model, conditions, fields, options = {}) => {
         return new Promise((resolve, reject) => {
             model.find(conditions, fields).count({}, (err, res) => {
                 if (err) {
-                    console.log('查询长度错误')
                     return reject(err);
                 }
                 
@@ -165,13 +155,11 @@ export const findPage = async (model, conditions, fields, options = {}) => {
                 return false;
             } else {
                 if (res.length != 0) {
-                    console.log('find success!');
                     resolve({
                         list: res,
                         total: count
                     })
                 } else {
-                    console.log('find fail:no this data!');
                     resolve({
                         list: res,
                         total: count

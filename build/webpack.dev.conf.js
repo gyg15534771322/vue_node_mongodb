@@ -23,7 +23,6 @@ const resolve = function (dir) {
 const assetsPath = function (dir) {
     return path.posix.join(devConf.assetsSubDirectory, dir)
 }
-// console.log(isAdmin ? resolve('admin/src/main.js') : resolve('client/src/main.js'))
 const dev = merge(baseConf, {
     output: {
         //文件名

@@ -77,10 +77,8 @@ import highlightJs from 'highlight.js'
                 formData.append('markdown_img', e.target.files[0]);
                 try {
                     let data = await this.$store.dispatch('markdown_upload_img', formData)
-                    console.log(data)
                     img = data.data.markdown_img
                 } catch (e) {
-                    console.log(e)
                 }
                 
                 let val = `![图片描述](${img})`
@@ -107,6 +105,7 @@ import highlightJs from 'highlight.js'
                 dom.focus();
                 dom.setSelectionRange(dom.value.length,cursorPosition + (posLen || val.length));
                 this.val = dom.value
+                this.$emit('input2', this.val)
             },
             insertAtCursor(dom, val) { // 光标所在位置插入字符
                 if (document.selection){

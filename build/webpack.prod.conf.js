@@ -59,7 +59,6 @@ const prod = merge({}, baseConf, {
             compress: {
                 warnings: false,
                 // drop_console: true, // 打包后去除console.log
-                // pure_funcs: ['console.log']
             },
             sourceMap: true
             // UglifyJs do not support ES6+, you can also use babel-minify for better treeshaking: https://github.com/babel/minify

@@ -49,13 +49,8 @@
                     await this.$store.dispatch('userLogin', this.loginInfo);
                     this.$router.push('/home')
                 } catch (e) {
-                    console.log(e)
                 }           
                 
-                // console.log(data)
-                // if (data.code !== 0) {
-                //     this.$router.push('/home')
-                // }
                 this.loading = false;
             },
 

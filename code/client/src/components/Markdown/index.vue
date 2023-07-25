@@ -77,10 +77,8 @@ import highlightJs from 'highlight.js'
                 formData.append('markdown_img', e.target.files[0]);
                 try {
                     let data = await this.$store.dispatch('markdown_upload_img', formData)
-                    console.log(data)
                     img = data.data.markdown_img
                 } catch (e) {
-                    console.log(e)
                 }
                 
                 let val = `![图片描述](${img})`

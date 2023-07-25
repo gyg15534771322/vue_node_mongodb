@@ -1,9 +1,12 @@
 import axios from 'src/utils/fetch'
 import { blogTypes } from './classify'
+import { sources } from './classify'
+
 
 const music = {
 	state: {
 		blogTypes,
+		sources,
 		list: [],
 		total: 0
 	},

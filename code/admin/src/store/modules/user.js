@@ -46,12 +46,10 @@ const user = {
 					pwd: pwd,
 				}).then( res => {
 					debugger;
-					// console.log(res)
 					state.token = getToken();
 					resolve(res)
 				}).catch( err => {
 					debugger;
-					// console.log(err)
 					reject(err)
 				})
 			})
@@ -61,11 +59,9 @@ const user = {
 				axios.get('user/info',{
 					token: state.token
 				}).then( res => {
-					console.log(res)
 					commit('SET_USERINFO', res.data)
 					resolve(res)
 				}).catch( err => {
-					// console.log(err)
 					reject(err)
 				})
 			})
@@ -73,11 +69,9 @@ const user = {
 		getUserList ({commit}, params) {
 			return new Promise( (resolve, reject) => {
 				axios.get('user/list', params).then( res => {
-					console.log(res)
 					commit('USERLIST', res.data)
 					resolve(res)
 				}).catch( err => {
-					// console.log(err)
 					reject(err)
 				})
 			})
@@ -112,29 +106,6 @@ const user = {
 					})
 			})
 		}
-		// getAddOtherInfo () {
-		// 	return new Promise( (resolve, reject) => {
-		// 		axios.post('admin_apis/info/add').then( res => {
-		// 			// console.log(res)
-		// 			resolve(res)
-		// 		}).catch( err => {
-		// 			// console.log(err)
-		// 			reject(err)
-		// 		})
-		// 	})
-		// },
-		// getOtherInfoList ({commit}) {
-		// 	return new Promise( (resolve, reject) => {
-		// 		axios.get('admin_apis/info/list').then( res => {
-		// 			// console.log(res)
-		// 			commit('GET_INFOLIST', res.data)
-		// 			resolve(res)
-		// 		}).catch( err => {
-		// 			// console.log(err)
-		// 			reject(err)
-		// 		})
-		// 	})
-		// }
 	}
 }
 
